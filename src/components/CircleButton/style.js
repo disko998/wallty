@@ -10,8 +10,4 @@ export const CircleTouchable = styled(TouchableOpacity)`
     background: ${colors.blue}
     width: 50px
     height: 50px
-    elevation: 5
-    position: absolute
-    bottom: -20px
-    right: 30px
 `

@@ -1,19 +1,29 @@
 // @ts-nocheck
 import React from 'react'
+import { useNavigation } from '@react-navigation/native';
 
 import { MoneyStatus, CircleButton } from 'components'
-import { CardWrapper, Earning, EarningLabel, StatusWrapper, additionMonyStyle } from './style'
+import { CardWrapper, Earning, EarningLabel, StatusWrapper, additionMonyStyle, ButtonWrapper, CardFooter } from './style'
+import { defaultShadows } from 'styles'
 
-export function CreditCard() {
+export function CreditCard(props) {
+    const navigation = useNavigation();
+
+    const openModal = () => {
+        navigation.navigate('InputForm')
+    }
+
     return (
-        <CardWrapper>
+        <CardWrapper style={defaultShadows}>
             <EarningLabel>ukupno zaradjeno:</EarningLabel>
             <Earning>$125,890.34</Earning>
             <StatusWrapper>
                 <MoneyStatus value={1900} label='trenutno:' style={additionMonyStyle} />
                 <MoneyStatus value={5000} spend label='potroseno:' style={additionMonyStyle} />
             </StatusWrapper>
-            <CircleButton />
+            <ButtonWrapper>
+                <CircleButton onPress={openModal} />
+            </ButtonWrapper>
         </CardWrapper>
     )
 }

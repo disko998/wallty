@@ -17,6 +17,7 @@ export const CardWrapper = styled(View)`
     border-top-right-radius: 0
     border-top-left-radius: 0
     elevation: 2
+    margin-bottom: 20px
 `
 
 export const EarningLabel = styled(Text)`
@@ -35,4 +36,17 @@ export const StatusWrapper = styled(View)`
     justify-content: space-between
     align-items: center
     flex-direction: row
+`
+
+export const ButtonWrapper = styled(View)`
+    elevation: 5
+    position: absolute
+    bottom: -20px
+    right: 30px
+`
+
+export const CardFooter = styled(View)`
+    width: 100%
+    
+    background: red
 `

@@ -14,7 +14,7 @@ export const TransactionFlatList = styled(FlatList)`
 
 export const Label = styled(Text)`
     font-size: 14px
-    margin-vertical: 10px
+    margin-bottom: 10px
     text-transform: uppercase
     color: ${colors.darkGray}
 `

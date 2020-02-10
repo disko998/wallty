@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Router from './router'
-import { AppWrapper } from './appStyle'
+import Router from './Router'
+import { AppWrapper } from './mainStyle'
 
 export default function Wallty() {
     return (
