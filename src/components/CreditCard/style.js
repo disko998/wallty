@@ -44,9 +44,3 @@ export const ButtonWrapper = styled(View)`
     bottom: -20px
     right: 30px
 `
-
-export const CardFooter = styled(View)`
-    width: 100%
-    
-    background: red
-`

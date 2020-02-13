@@ -3,14 +3,14 @@ import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 
 import { MoneyStatus, CircleButton } from 'components'
-import { CardWrapper, Earning, EarningLabel, StatusWrapper, additionMonyStyle, ButtonWrapper, CardFooter } from './style'
+import { CardWrapper, Earning, EarningLabel, StatusWrapper, additionMonyStyle, ButtonWrapper } from './style'
 import { defaultShadows } from 'styles'
 
-export function CreditCard(props) {
+export function CreditCard() {
     const navigation = useNavigation();
 
     const openModal = () => {
-        navigation.navigate('InputForm')
+        navigation.navigate('Form')
     }
 
     return (
