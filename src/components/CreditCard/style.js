@@ -43,4 +43,5 @@ export const ButtonWrapper = styled(View)`
     position: absolute
     bottom: -20px
     right: 30px
+    border-radius: 30px
 `
