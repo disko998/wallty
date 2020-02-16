@@ -17,7 +17,7 @@ import {
 } from './style'
 
 export function TransactionCard({ item: { title, date, amount, pay }, earning, ...otherProps }) {
-    const formatedDate = moment(date).format('DD.MM.YYYY HH:mm')
+    const formatedDate = moment(date).format('DD.MM.YYYY')
     return (
         <CardWrapper {...otherProps}>
             <InfoWrapper>

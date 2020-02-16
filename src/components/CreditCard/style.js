@@ -1,18 +1,23 @@
-import { View, Text } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 import styled from 'styled-components'
 
 import { colors } from 'styles'
 
-export const additionMonyStyle = {
-    marginHorizontal: 10,
-}
+export const styles = StyleSheet.create({
+    money: { marginHorizontal: 10 },
+    gradient: {
+        width: '100%',
+        height: 250,
+        justifyContent: 'center',
+        alignItems: 'center',
+        borderRadius: 30,
+        borderTopRightRadius: 0,
+        borderTopLeftRadius: 0,
+    },
+})
 
 export const CardWrapper = styled(View)`
-    width: 100%
-    height: 250px
     background: ${colors.mainBlue}
-    justify-content: center
-    align-items: center
     border-radius: 30px
     border-top-right-radius: 0
     border-top-left-radius: 0
