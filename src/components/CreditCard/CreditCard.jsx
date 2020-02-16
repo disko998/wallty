@@ -16,10 +16,10 @@ export function CreditCard({ earning, spending, onTransaction }) {
     }
     return (
         <CardWrapper style={defaultShadows}>
-            <EarningLabel>Amount earned:</EarningLabel>
-            <Earning>${formatMoney(earning)}</Earning>
+            <EarningLabel>Current status:</EarningLabel>
+            <Earning>${formatMoney(currentStatus)}</Earning>
             <StatusWrapper>
-                <MoneyStatus value={formatMoney(currentStatus)} label='current:' style={additionMonyStyle} />
+                <MoneyStatus value={formatMoney(earning)} label='earned:' style={additionMonyStyle} />
                 <MoneyStatus value={formatMoney(spending)} spend label='spent:' style={additionMonyStyle} />
             </StatusWrapper>
             <ButtonWrapper>

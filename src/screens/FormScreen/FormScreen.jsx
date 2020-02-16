@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Ionicons } from '@expo/vector-icons'
 import { Switch, Alert } from 'react-native'
+import moment from 'moment'
 
 import { CustomButton, InputField } from 'components'
 import { FormScreenWrapper, FormWrapper, CloseButton, SwitchWrapper, SwitchLabel } from './style'
@@ -26,7 +27,13 @@ export function FormScreen({ navigation, route }) {
             return
         }
 
-        const transaction = { id: randomId(), title, pay: payment, amount: amountToFloat, date: new Date() }
+        const transaction = {
+            id: randomId(),
+            title,
+            pay: payment,
+            amount: amountToFloat,
+            date: moment(),
+        }
 
         Alert.alert(
             'New Transaction',

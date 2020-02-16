@@ -14,3 +14,10 @@ export const Label = styled(Text)`
     text-transform: uppercase
     color: ${colors.darkGray}
 `
+
+export const EmptyText = styled(Text)`
+    font-size: 14px
+    margin-top: 30px
+    color: ${colors.darkGray}
+    text-align: center
+`

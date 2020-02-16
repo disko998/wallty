@@ -1,19 +1,22 @@
-import React, { useState } from 'react'
-import { StatusBar } from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { StatusBar, AsyncStorage } from 'react-native'
+import moment from 'moment'
 
 import { CreditCard, TransactionList } from 'components'
 import { HomeWrapper } from './style'
 
-const DATA = [
-    { id: '123dxa4hsd12423', title: 'Title 1', amount: 500, date: new Date(), pay: true },
-    { id: '123dxa1412423', title: 'Title 2', amount: 1600, date: new Date(), pay: false },
-    { id: '123dsfdxa4122423', title: 'Title 3', amount: 200, date: new Date(), pay: true },
-    { id: '123dxhhsa412423', title: 'Title 4', amount: 1730.32, date: new Date(), pay: false },
-    { id: '123d63xa412423', title: 'Title 3', amount: 400, date: new Date(), pay: true },
-]
-
 export const HomeScreen = () => {
-    const [transactions, setTransactions] = useState(DATA)
+    const [transactions, setTransactions] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await AsyncStorage.getItem('TRANSACTION_KEY')
+            const trans = JSON.parse(result) || []
+            setTransactions(trans)
+        }
+
+        fetchData()
+    }, [])
 
     const earning = transactions.reduce((value, trans) => {
         return trans.pay ? value : value + trans.amount
@@ -21,12 +24,16 @@ export const HomeScreen = () => {
     const spending = transactions.reduce((value, trans) => {
         return trans.pay ? value + trans.amount : value
     }, 0)
-    const sortedTransactions = transactions.sort((a, b) => b.date - a.date)
-
+    const sortedTransactions = transactions.sort(
+        (a, b) => moment(b.date).milliseconds(Number) - moment(a.date).milliseconds(Number)
+    )
     const onTransaction = transaction => {
+        const newTransaction = [...transactions, transaction]
+        AsyncStorage.setItem('TRANSACTION_KEY', JSON.stringify(newTransaction))
         setTransactions([...transactions, transaction])
     }
 
+    // AsyncStorage.clear()
     return (
         <HomeWrapper>
             <StatusBar barStyle='light-content' />

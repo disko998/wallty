@@ -1,5 +1,7 @@
 // @ts-nocheck
 import React from 'react'
+import moment from 'moment'
+
 import { MoneyStatus, MoneySvg } from 'components'
 import { colors } from 'styles'
 import { getPercentage, formatMoney } from 'lib/utils'
@@ -15,13 +17,14 @@ import {
 } from './style'
 
 export function TransactionCard({ item: { title, date, amount, pay }, earning, ...otherProps }) {
+    const formatedDate = moment(date).format('DD.MM.YYYY HH:mm')
     return (
         <CardWrapper {...otherProps}>
             <InfoWrapper>
                 <MoneySvg color={pay ? colors.danger : colors.success} />
                 <ColumnWrapper>
                     <Title>{title}</Title>
-                    <Date>{date.toLocaleDateString()}</Date>
+                    <Date>{formatedDate}</Date>
                 </ColumnWrapper>
             </InfoWrapper>
             <ColumnWrapper>
