@@ -1,25 +1,26 @@
 // @ts-nocheck
 import React from 'react'
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native'
 
 import { MoneyStatus, CircleButton } from 'components'
 import { CardWrapper, Earning, EarningLabel, StatusWrapper, additionMonyStyle, ButtonWrapper } from './style'
 import { defaultShadows } from 'styles'
+import { formatMoney } from 'lib/utils'
 
-export function CreditCard() {
-    const navigation = useNavigation();
+export function CreditCard({ earning, spending, onTransaction }) {
+    const navigation = useNavigation()
+    const currentStatus = earning - spending
 
     const openModal = () => {
-        navigation.navigate('Form')
+        navigation.navigate('Form', { onTransaction: onTransaction })
     }
-
     return (
         <CardWrapper style={defaultShadows}>
-            <EarningLabel>ukupno zaradjeno:</EarningLabel>
-            <Earning>$125,890.34</Earning>
+            <EarningLabel>Amount earned:</EarningLabel>
+            <Earning>${formatMoney(earning)}</Earning>
             <StatusWrapper>
-                <MoneyStatus value={1900} label='trenutno:' style={additionMonyStyle} />
-                <MoneyStatus value={5000} spend label='potroseno:' style={additionMonyStyle} />
+                <MoneyStatus value={formatMoney(currentStatus)} label='current:' style={additionMonyStyle} />
+                <MoneyStatus value={formatMoney(spending)} spend label='spent:' style={additionMonyStyle} />
             </StatusWrapper>
             <ButtonWrapper>
                 <CircleButton onPress={openModal} />

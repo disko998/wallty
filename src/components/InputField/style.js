@@ -23,6 +23,6 @@ export const Label = styled(Text)`
     color: ${colors.black}
     font-size: 18px
     margin-right: 10px
-    min-width: 80px
-    text-align: left
+    min-width: 70px
+    text-align: right
 `

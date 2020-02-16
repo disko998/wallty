@@ -1,7 +1,8 @@
 // @ts-nocheck
 import React from 'react'
-
 import { MoneyStatus, MoneySvg } from 'components'
+import { colors } from 'styles'
+import { getPercentage, formatMoney } from 'lib/utils'
 import {
     CardWrapper,
     Title,
@@ -12,23 +13,25 @@ import {
     additionalMonyStyle,
     InfoWrapper,
 } from './style'
-import { colors } from 'styles'
 
-export function TransactionCard({ item: { title, date, value }, ...otherProps }) {
+export function TransactionCard({ item: { title, date, amount, pay }, earning, ...otherProps }) {
     return (
         <CardWrapper {...otherProps}>
             <InfoWrapper>
-                <MoneySvg color={value < 0 ? colors.danger : colors.success} />
+                <MoneySvg color={pay ? colors.danger : colors.success} />
                 <ColumnWrapper>
                     <Title>{title}</Title>
                     <Date>{date.toLocaleDateString()}</Date>
                 </ColumnWrapper>
             </InfoWrapper>
             <ColumnWrapper>
-                <MoneyStatus value={value} spend={value < 0 ? true : false} style={additionalMonyStyle} />
+                <MoneyStatus value={formatMoney(amount)} spend={pay} style={additionalMonyStyle} />
                 <EarnedMoney>
-                    $125,890.23
-                    <Percentage> {value < 0 ? '-' : '+'} (10.23%)</Percentage>
+                    ${formatMoney(earning)}
+                    <Percentage>
+                        {' '}
+                        {pay ? '-' : '+'} ({getPercentage(amount, earning)}%)
+                    </Percentage>
                 </EarnedMoney>
             </ColumnWrapper>
         </CardWrapper>

@@ -8,10 +8,6 @@ export const TransactionWrapper = styled(View)`
     padding: 20px;
 `
 
-export const TransactionFlatList = styled(FlatList)`
-    flex: 1;
-`
-
 export const Label = styled(Text)`
     font-size: 14px
     margin-bottom: 10px
