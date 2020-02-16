@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import styled from 'styled-components'
 
-import { colors } from 'styles'
+import { color } from 'styles'
 
 export const additionMonyStyle = {
     marginHorizontal: 10,
@@ -10,12 +10,10 @@ export const additionMonyStyle = {
 export const CardWrapper = styled(View)`
     width: 100%
     height: 250px
-    background: ${colors.mainBlue}
+    background: ${color.creditCard.background}
     justify-content: center
     align-items: center
     border-radius: 30px
-    border-top-right-radius: 0
-    border-top-left-radius: 0
     elevation: 2
     margin-bottom: 20px
 `
@@ -23,12 +21,12 @@ export const CardWrapper = styled(View)`
 export const EarningLabel = styled(Text)`
     font-size: 14px
     text-transform: uppercase
-    color: ${colors.gray}
+    color: ${color.gray}
 `
 
 export const Earning = styled(Text)`
     font-size: 36px;
-    color: ${colors.white};
+    color: ${color.white};
     margin-vertical: 10px;
 `
 

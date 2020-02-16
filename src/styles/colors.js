@@ -9,3 +9,10 @@ export const colors = {
     blue: '#0B87E0',
     darkGray: '#939393',
 }
+
+export const color = {
+    ...colors,
+    creditCard: {
+        background: 'rgba(18, 9, 181, .0)',
+    },
+}

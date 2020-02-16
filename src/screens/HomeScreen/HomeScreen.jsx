@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { StatusBar, AsyncStorage } from 'react-native'
 import moment from 'moment'
 
-import { CreditCard, TransactionList } from 'components'
+import { CreditCard, TransactionList, MoneyChart } from 'components'
 import { HomeWrapper } from './style'
 
 export const HomeScreen = () => {
@@ -37,6 +37,7 @@ export const HomeScreen = () => {
     return (
         <HomeWrapper>
             <StatusBar barStyle='light-content' />
+            <MoneyChart />
             <CreditCard earning={earning} spending={spending} onTransaction={onTransaction} />
             <TransactionList transactions={sortedTransactions} earning={earning} />
         </HomeWrapper>
