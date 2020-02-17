@@ -1,15 +1,16 @@
 {
     "expo": {
-        "name": "wallty",
+        "name": "Wallty",
         "slug": "wallty",
         "privacy": "public",
         "sdkVersion": "36.0.0",
         "platforms": ["ios", "android", "web"],
-        "version": "1.0.0",
+        "githubUrl": "https://github.com/disko998/wallty",
+        "version": "1.0.1",
         "orientation": "portrait",
         "icon": "./assets/icon.png",
         "splash": {
-            "image": "./assets/splash.png",
+            "image": "./assets/wallty.png",
             "resizeMode": "contain",
             "backgroundColor": "#ffffff"
         },
@@ -18,7 +19,13 @@
         },
         "assetBundlePatterns": ["**/*"],
         "ios": {
-            "supportsTablet": true
+            "supportsTablet": true,
+            "bundleIdentifier": "com.wallty.wallty",
+            "buildNumber": "1.0.0"
+        },
+        "android": {
+            "package": "com.wallty.wallty",
+            "versionCode": 1
         }
     }
 }

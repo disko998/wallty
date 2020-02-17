@@ -46,7 +46,7 @@ export const StatusWrapper = styled(View)`
 export const ButtonWrapper = styled(View)`
     elevation: 5
     position: absolute
-    bottom: -20px
+    bottom: -15px
     right: 30px
     border-radius: 30px
 `
