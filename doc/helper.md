@@ -1,5 +1,0 @@
--   transakcije
-    -   ime
-    -   vrednost
-    -   vrsta transakcije
-    -   datum

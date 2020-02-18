@@ -5,6 +5,7 @@ import moment from 'moment'
 import { MoneyStatus, MoneySvg } from 'components'
 import { colors } from 'styles'
 import { getPercentage, formatMoney } from 'lib/utils'
+import { EarningContext } from 'lib/contexts'
 import {
     CardWrapper,
     Title,
@@ -16,8 +17,10 @@ import {
     InfoWrapper,
 } from './style'
 
-export function TransactionCard({ item: { title, date, amount, pay }, earning, ...otherProps }) {
+export function TransactionCard({ item: { title, date, amount, pay }, ...otherProps }) {
+    const earning = useContext(EarningContext)
     const formatedDate = moment(date).format('DD.MM.YYYY')
+
     return (
         <CardWrapper {...otherProps}>
             <InfoWrapper>

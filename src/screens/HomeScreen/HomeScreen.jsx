@@ -3,6 +3,7 @@ import { StatusBar, AsyncStorage } from 'react-native'
 import moment from 'moment'
 
 import { CreditCard, TransactionList } from 'components'
+import { EarningContext } from 'lib/contexts'
 import { HomeWrapper } from './style'
 
 export const HomeScreen = () => {
@@ -38,7 +39,9 @@ export const HomeScreen = () => {
         <HomeWrapper>
             <StatusBar barStyle='light-content' />
             <CreditCard earning={earning} spending={spending} onTransaction={onTransaction} />
-            <TransactionList transactions={sortedTransactions} earning={earning} />
+            <EarningContext.Provider value={earning}>
+                <TransactionList transactions={sortedTransactions} />
+            </EarningContext.Provider>
         </HomeWrapper>
     )
 }
