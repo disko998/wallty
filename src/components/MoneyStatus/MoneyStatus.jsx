@@ -5,15 +5,15 @@ import { Ionicons } from '@expo/vector-icons'
 import { MoneyWrapper, Value, Label } from './style'
 import { colors } from 'styles'
 
-export function MoneyStatus({ value, spend, label, ...otherProps }) {
+export function MoneyStatus({ value, expense, label, ...otherProps }) {
     return (
         <MoneyWrapper {...otherProps}>
             {label && <Label>{label}</Label>}
-            <Value spend={spend}>${value}</Value>
+            <Value expense={expense}>${value}</Value>
             <Ionicons
-                name={`md-arrow-${spend ? 'down' : 'up'}`}
+                name={`md-arrow-${expense ? 'down' : 'up'}`}
                 size={15}
-                color={spend ? colors.danger : colors.success}
+                color={expense ? colors.danger : colors.success}
             />
         </MoneyWrapper>
     )

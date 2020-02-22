@@ -19,10 +19,10 @@ export const HomeScreen = () => {
         fetchData()
     }, [])
 
-    const earning = transactions.reduce((value, trans) => {
+    const income = transactions.reduce((value, trans) => {
         return trans.pay ? value : value + trans.amount
     }, 0)
-    const spending = transactions.reduce((value, trans) => {
+    const expense = transactions.reduce((value, trans) => {
         return trans.pay ? value + trans.amount : value
     }, 0)
     const sortedTransactions = transactions.sort(
@@ -38,8 +38,8 @@ export const HomeScreen = () => {
     return (
         <HomeWrapper>
             <StatusBar barStyle='light-content' />
-            <CreditCard earning={earning} spending={spending} onTransaction={onTransaction} />
-            <EarningContext.Provider value={earning}>
+            <CreditCard income={income} expense={expense} onTransaction={onTransaction} />
+            <EarningContext.Provider value={income}>
                 <TransactionList transactions={sortedTransactions} />
             </EarningContext.Provider>
         </HomeWrapper>

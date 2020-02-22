@@ -18,11 +18,12 @@ export const FormWrapper = styled(View)`
     width: 80%
 `
 
-export const PayButton = styled(TouchableOpacity)`
-    background: ${colors.mainBlue};
-    border-radius: 5px
-    min-width: 200px
-    padding: 15px
+export const FormTitle = styled(Text)`
+    color: ${colors.black}
+    font-size: 23px
+    text-align: center
+    font-weight: bold
+    margin-bottom: 30px;
 `
 
 export const ButtonLabel = styled(Text)`
@@ -48,4 +49,5 @@ export const SwitchWrapper = styled(View)`
 export const SwitchLabel = styled(Text)`
     text-transform: uppercase;
     text-align: center;
+    font-weight: bold;
 `

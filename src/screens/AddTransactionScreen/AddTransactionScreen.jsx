@@ -3,12 +3,12 @@ import { Ionicons } from '@expo/vector-icons'
 import { Switch, Alert } from 'react-native'
 import moment from 'moment'
 
-import { CustomButton, InputField } from 'components'
-import { FormScreenWrapper, FormWrapper, CloseButton, SwitchWrapper, SwitchLabel } from './style'
-import { DEFAULT_HIT_SLOP } from 'styles'
 import { randomId, formatMoney } from 'lib/utils'
+import { CustomButton, InputField } from 'components'
+import { DEFAULT_HIT_SLOP } from 'styles'
+import { FormScreenWrapper, FormWrapper, CloseButton, SwitchWrapper, SwitchLabel, FormTitle } from './style'
 
-export function FormScreen({ navigation, route }) {
+export const AddTransactionScreen = ({ navigation, route }) => {
     const [title, setTitle] = useState('')
     const [amount, setAmount] = useState('')
     const [payment, setPayment] = useState(false)
@@ -62,6 +62,7 @@ export function FormScreen({ navigation, route }) {
                 <CloseButton onPress={navigation.goBack} hitSlop={DEFAULT_HIT_SLOP}>
                     <Ionicons name={`md-close`} size={30} color='white' />
                 </CloseButton>
+                <FormTitle>Add New Transaction</FormTitle>
                 <InputField maxLength={15} label='Title:' value={title} onChangeText={setTitle} />
                 <InputField
                     maxLength={8}
@@ -72,9 +73,9 @@ export function FormScreen({ navigation, route }) {
                 />
                 <SwitchWrapper>
                     <Switch value={payment} onValueChange={setPayment} />
-                    <SwitchLabel>Pay</SwitchLabel>
+                    <SwitchLabel>income/expense</SwitchLabel>
                 </SwitchWrapper>
-                <CustomButton label='Processed' onPress={submitForm} />
+                <CustomButton label='Add Transaction' onPress={submitForm} />
             </FormWrapper>
         </FormScreenWrapper>
     )

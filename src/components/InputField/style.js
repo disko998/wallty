@@ -25,4 +25,5 @@ export const Label = styled(Text)`
     margin-right: 10px
     min-width: 70px
     text-align: right
+    font-weight: bold
 `

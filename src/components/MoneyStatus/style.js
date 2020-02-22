@@ -13,13 +13,13 @@ export const Value = styled(Text)`
     font-size: 14px
     font-weight: bold
     text-transform: uppercase
-    color: ${props => (props.spend ? colors.danger : colors.success)}
+    color: ${props => (props.expense ? colors.danger : colors.success)}
     marginRight: 5px
 `
 
 export const Label = styled(Text)`
     font-size: 9px
     text-transform: uppercase
-    color: ${colors.gray}
+    color: ${colors.lightGray}
     margin-right: 5px
 `

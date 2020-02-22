@@ -2,7 +2,7 @@ import * as React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 
-import { HomeScreen, FormScreen } from 'screens'
+import { HomeScreen, AddTransactionScreen } from 'screens'
 
 const MainStack = createStackNavigator()
 const RootStack = createStackNavigator()
@@ -21,8 +21,8 @@ export default function RootStackScreen() {
             <RootStack.Navigator headerMode='none' mode='modal'>
                 <RootStack.Screen name='Home' component={MainStackScreen} />
                 <RootStack.Screen
-                    name='Form'
-                    component={FormScreen}
+                    name='AddTransaction'
+                    component={AddTransactionScreen}
                     options={{
                         cardStyle: {
                             backgroundColor: 'rgba(0,0,0,0.8)',

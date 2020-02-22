@@ -13,7 +13,7 @@ export const CardWrapper = styled(TouchableOpacity)`
     margin: 5px
     margin-bottom: 10px
     padding: 10px
-    elevation: 5
+    elevation: 2
     flex-direction: row
     align-items: center
     justify-content: space-between
