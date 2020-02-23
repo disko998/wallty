@@ -1,5 +1,4 @@
-// @ts-nocheck
-import React, { useContext } from 'react'
+import React from 'react'
 
 import { TransactionCard } from 'components'
 import { TransactionWrapper, Label, EmptyText } from './style'

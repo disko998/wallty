@@ -1,12 +1,12 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import styled from 'styled-components'
 
 import { colors } from 'styles'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { MoneyStatus } from '../MoneyStatus'
 
-export const additionalMonyStyle = {
-    alignSelf: 'flex-end',
-}
+export const Amount = styled(MoneyStatus)`
+    align-self: flex-end;
+`
 
 export const CardWrapper = styled(TouchableOpacity)`
     background: ${colors.white}
@@ -20,7 +20,7 @@ export const CardWrapper = styled(TouchableOpacity)`
     border-radius: 5px
 `
 
-export const ColumnWrapper = styled(View)`
+export const FlexColumn = styled(View)`
     flex-direction: column;
 `
 
@@ -36,14 +36,14 @@ export const Date = styled(Text)`
     color: ${colors.darkGray}
 `
 
-export const EarnedMoney = styled(Date)`
+export const BalanceStatus = styled(Date)`
     color: ${colors.black};
 `
 
-export const Percentage = styled(EarnedMoney)`
+export const Percentage = styled(BalanceStatus)`
     font-size: 14px
     color: ${colors.darkGray}
 `
-export const InfoWrapper = styled(View)`
+export const FlexRow = styled(View)`
     flex-direction: row;
 `
